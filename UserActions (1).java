@@ -52,7 +52,7 @@ public class UserActions {
         int remainingAmount = (int) amount;
         int totalATMAvailable = 0;
 
-        // Calculate total ATM balance from notes
+        
         for (Notes note : ATMSystem.getNotes()) {
             totalATMAvailable += note.getDenomination() * note.getCount();
         }
@@ -62,7 +62,7 @@ public class UserActions {
             return;
         }
 
-        // Prepare to calculate the withdrawal
+        
         int required2000 = 0, required500 = 0, required200 = 0, required100 = 0;
 
         for (Notes note : ATMSystem.getNotes()) {
@@ -84,13 +84,13 @@ public class UserActions {
             }
         }
 
-        // Check if the withdrawal is possible with available denominations
+        
         if (remainingAmount > 0) {
             System.out.println("ATM cannot dispense the exact amount with available denominations.");
             return;
         }
 
-        // Deduct notes from ATM and update balances
+        
         for (Notes note : ATMSystem.getNotes()) {
             if (note.getDenomination() == 2000) {
                 note.setCount(note.getCount() - required2000);
@@ -107,7 +107,7 @@ public class UserActions {
         ATMSystem.setAtmbalance(ATMSystem.getAtmbalance() - amount);
         user.getTransactions().add(new Transaction("withdraw", amount));
 
-        // Display successful withdrawal
+        
         System.out.println("Withdrawal successful. Notes Withdrawn:");
         if (required2000 > 0) System.out.println("2000 x " + required2000);
         if (required500 > 0) System.out.println("500 x " + required500);
