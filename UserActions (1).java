@@ -15,7 +15,7 @@ public class UserActions {
         String confirmPin = sc.nextLine();
 
         if (newPin.equals(confirmPin)) {
-            user.setPassword(newPin); // Assuming setPassword stores the PIN
+            user.setPassword(newPin); 
             System.out.println("PIN changed successfully.");
         } else {
             System.out.println("PIN mismatch. Try again.");
