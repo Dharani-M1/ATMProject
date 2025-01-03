@@ -86,7 +86,7 @@ public class UserActions {
 
         
         if (remainingAmount > 0) {
-            System.out.println("ATM cannot dispense the exact amount with available denominations.");
+            System.out.println("ATM has No Available denominations.");
             return;
         }
 
